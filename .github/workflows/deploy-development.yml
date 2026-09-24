@@ -1,10 +1,10 @@
-# Deploys the development branch to your -dev site.
-# Runs whenever something is pushed or merged into development.
+# Deploys the dev branch to your -dev site.
+# Runs whenever something is pushed or merged into dev.
 name: Deploy to Development
 
 on:
   push:
-    branches: [development]
+    branches: [dev]
   workflow_dispatch: # adds a "Run workflow" button in the Actions tab
 
 # Never run two deploys to the same site at once
@@ -15,7 +15,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: development # DEPLOY_USER and DEPLOY_PATH come from this environment
+    environment: dev # DEPLOY_USER and DEPLOY_PATH come from this environment
 
     steps:
       # 1. Get the code
